@@ -1,0 +1,428 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulla Al Hussain</title>
+    <link rel="icon" href="./picture/DP.png">
+    <link rel="stylesheet" href="./style/design.css" />
+      <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.css" rel="stylesheet">
+
+</head>
+
+<!-- Email Sending -->
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  emailjs.init("45121FqTRXHpRiY_8"); // Your Public Key
+
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    emailjs.sendForm(
+      "service_zs2gfbk",
+      "template_tlvvpgc",
+      this,
+      "45121FqTRXHpRiY_8"
+    ).then(
+      function () {
+        // create success alert
+
+        const alertBox = document.createElement("div");
+        alertBox.className = "alert alert-success fixed top-5 left-1/2 -translate-x-1/2 w-auto z-50 shadow-lg";
+        alertBox.innerHTML = "<span>Message sent Successfully.</span>";
+        document.body.prepend(alertBox);
+
+        //Scroll to top
+        window.scrollTo({top: 0,
+          behavior: "smooth"
+        });
+        //Reset Form
+        document.getElementById("contact-form").reset();
+
+        //Reload page after 3 seconds
+        setTimeout(() =>
+      {location.reload();},3000);
+
+      },
+      function (error) {
+        alert("Failed to send message. Please try again.");
+        console.log(error);
+      }
+    );
+
+  });
+
+});
+</script>
+
+<body class="px-4 py-4 md:pl-10 md:pr-5 md:py-5"> 
+    <!-- header -->
+    <header>
+<!-- Nav Bar -->
+ <div> 
+<div class="relative navbar bg-black/20 backdrop-blur-md shadow-sm flex justify-between px-4 md:px-8 lg:px-16 py-2">
+
+  <!-- Name -->
+  <div class="absolute">
+    <a class="text-base md:text-lg lg:text-xl font-bold whitespace-nowrap">
+      Abdulla Al Hussain
+    </a>
+  </div>
+
+  <!-- CV Download -->
+  <div class="flex-none ml-auto">
+    <button id="downloadBtn" class="btn btn-ghost text-sm md:text-base lg:text-lg">
+      Download CV
+    </button>
+  </div>
+
+</div>
+
+<script>
+  const btn = document.getElementById("downloadBtn");
+
+  btn.addEventListener("click", () => {
+    // Change text to "Downloading..."
+    btn.textContent = "Downloading...";
+
+    // Optional delay for demo
+    setTimeout(() => {
+      // Trigger real download
+      const link = document.createElement("a");
+      link.href = "./file/AbdullaCV.pdf"; 
+      link.download = "Abdulla_Al_Hussain_CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Reset button text
+      btn.textContent = "Download CV";
+    }, 500);
+  });
+</script>
+  </div>
+
+<!-- Header -->
+ <div class="min-h-screen flex items-center px-6 md:px-20">
+   <div class="grid md:grid-cols-2 gap-10 items-center w-full">
+
+    <!-- LEFT SIDE – CV SUMMARY -->
+    <div class="space-y-6">
+      <h1 class="text-2xl md:text-6xl font-bold leading-tight typing delay">
+      Hi, I'm <span class="text-primary">Abdulla Al Hussain</span>
+     </h1>
+
+     <h2 class="text-xl md:text-3xl font-semibold text-gray-300 typing delay-1">
+      Web Developer
+      </h2>
+
+     <p class="text-lg text-gray-400 max-w-lg">
+     & AI Research Enthusiast with a B.Sc. in CSE (CGPA 3.78). I specialize in building scalable and secure web applications using React, Node.js, MongoDB, and Tailwind CSS.
+
+      Proficient in C, C++, Python, and SQL with strong problem-solving and analytical skills. IEEE ICCIT 2025 research author and Hult Prize 2024 contributor, passionate about solving real-world challenges through technology.
+      </p>
+             <div class="flex gap-4">
+             <a href="#contact" class="btn btn-primary">Hire Me</a>
+              
+
+        <div>
+          <button id="downloadBtnt" class="btn btn-outline">Download CV</button>
+         <script>
+         const btncv = document.getElementById("downloadBtnt");
+
+         btncv.addEventListener("click", () => {
+         // Change text to "Downloading..."
+         btncv.textContent = "Downloading...";
+
+         // Optional delay for demo
+         setTimeout(() => {
+      // Trigger real download
+         const link = document.createElement("a");
+         link.href = "./file/AbdullaCV.pdf" 
+         link.download = "Abdulla_Al_Hussain_CV.pdf";
+         document.body.appendChild(link);
+         link.click();
+         document.body.removeChild(link);
+          // Reset button text
+          btncv.textContent = "Download CV";
+    }, 500);
+  });
+</script>
+        </div>
+        
+       </div>
+       </div>
+
+<div class="flex justify-center">
+  <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/20 animate-glow">
+    <img src="./picture/DP.png" alt="Abdulla" class="w-full h-full object-cover rounded-full">
+  </div>
+</div>
+</div>
+  </div>
+</header>
+<!-- Cards -->
+  <h2 class="pt-10 px-4 text-xl md:text-xl lg:text-xl font-semibold text-gray-300 ">Achievement & participation</h2>
+ <!-- Cards Container -->
+<div class="mt-8 grid grid-cols-1 gap-y-6 px-4 md:grid-cols-2 lg:grid-cols-2">
+
+  <!-- Card 1 -->
+  <div class=" flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md"> 
+    <figure>
+      <img class="p-4 w-full object-cover"
+        src="./picture/iccit.jpg"
+        alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">ICCIT 2025</h2>
+      <p class="flex-grow">
+       Research work IEEE ICCIT 2025
+       Research on diabetic retinopathy “Detection and severity classification from fundus
+       images using deep transfer learning” accepted at IEEE ICCIT 2025. 
+      </p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="flex flex-col h-full card bg-base-100 w-full max-w-sm 
+          hover:shadow-xl hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <figure>
+      <img class="p-4 w-full object-cover"
+        src="./picture/Vutech.jpg"
+        alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Web Project Showcasing (Donation website)</h2>
+      <p class="flex-grow">
+        Hope’s Rising – A full-stack donation platform built with React, Node.js, and Firebase,
+        allowing users to contribute securely across multiple categories with real-time data
+        handling. 
+      </p>
+    </div>
+  </div>
+
+    <!-- Card 3 -->
+  <div class=" flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <figure>
+      <img class="p-4 w-full object-cover"
+        src="./picture/Hult.jpg"
+        alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Hult Prize</h2>
+      <p class="flex-grow">
+         Hydro Harmony (Hult Prize Competition) – Developed an innovative project idea
+         focused on safe water solutions, addressing sustainability and accessibility challenges
+         as part of the global Hult Prize initiative.
+      </p>
+    </div>
+  </div>
+</div>
+
+ <h2 class="pt-10 px-4 text-xl md:text-xl lg:text-xl font-semibold text-gray-300 ">Web Works</h2>
+ <!-- card contaner 2 -->
+ <div class="mt-8 grid grid-cols-1 gap-y-6 px-4 md:grid-cols-2 lg:grid-cols-2">
+<!-- card 1 -->
+   <div class="  flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <figure>
+      <img class="p-4 w-full object-cover"
+        src="./picture/projectone.PNG"
+        alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Frontend Development</h2>
+      <p>HTML & CSS</p>
+     <a href="https://abdulla-al-hussain.github.io/second-assigment/" target="_blank" class="btn btn-ghost">GitHub Link</a>
+    </div>
+  </div>
+
+  <!-- card 2 -->
+   <div class=" flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <figure>
+      <img class="p-4 w-full object-cover"
+        src="./picture/projecttwo.PNG"
+        alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Frontend Development</h2>
+      <p>using HTML,TailwindCSS,JavaScript</p>
+     <a href="https://abdulla-al-hussain.github.io/Penguin/" target="_blank" class="btn btn-ghost">GitHub Link</a>
+    </div>
+  </div>
+
+  <!-- card 3 -->
+     <div class=" flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <figure>
+      <img class="p-4 w-full object-cover"
+        src="./picture/projectthree.PNG"
+        alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Frontend Development</h2>
+      <p>using HTML,TailwindCSS,JavaScript</p>
+     <a href="https://abdulla-al-hussain.github.io/biker-zone/" target="_blank" class="btn btn-ghost">GitHub Link</a>
+    </div>
+  </div>
+
+ </div>
+
+ <h2 class="pt-10 px-4 text-xl md:text-xl lg:text-xl font-semibold text-gray-300 ">Programming Languages</h2>
+
+  <!-- card contaner 3 -->
+ <div class="mt-8 grid grid-cols-1 gap-y-6 px-4 md:grid-cols-2 lg:grid-cols-2">
+
+<!-- card 1 -->
+   <div class="  flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <div class="card-body">
+      <h2 class="card-title">Python</h2>
+      <p>Implemented AI-based models and numerical methods (e.g., equation solving, optimization
+        techniques), showcasing strong problem-solving and analytical coding skills.</p>
+    </div>
+  </div>
+
+  <!-- card 2 -->
+   <div class="  flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <div class="card-body">
+      <h2 class="card-title">C++</h2>
+      <p>Developed multiple algorithms including cryptographic techniques (AES, DES, etc.)
+         and classical problemsolving algorithms,
+         demonstrating efficiency in low-level programming and data structure handling.</p>
+    </div>
+  </div>
+
+  <!-- card 3 -->
+   <div class="  flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <div class="card-body">
+      <h2 class="card-title">Java</h2>
+      <p>Basic OOP</p>
+    </div>
+  </div>
+
+    <!-- card 4 -->
+   <div class="  flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <div class="card-body">
+      <h2 class="card-title">Problem-Solving & Analytical Thinking</h2>
+      <p>SQL Query solve and MS Office works</p>
+    </div>
+  </div>
+
+ </div>
+
+
+ <h2 class="pt-10 px-4 text-xl md:text-xl lg:text-xl font-semibold text-gray-300 ">Sports</h2>
+ <!-- card contaner 4 -->
+ <div class="mt-8 grid grid-cols-1 gap-y-6 px-4 md:grid-cols-2 lg:grid-cols-2">
+<!-- card 1 -->
+   <div class="  flex flex-col h-full card bg-base-100 w-full max-w-sm  hover:shadow-xl 
+       hover:bg-white/5 transition-all duration-300 md:w-90 shadow-sm bg-black/10 backdrop-blur-md">
+    <figure>
+      <img class="p-4 w-full object-cover"
+        src="./picture/Football.png"
+        alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Inter-Semester Football Tournament</h2>
+      <p class="flex-grow">
+         Achieved Runners-Up position in the 2023 Inter-Semester Football Tournament
+      </p>
+    </div>
+  </div>
+ </div>
+
+  <!-- Email Contact Section -->
+<div id="contact" class="mt-16 px-4 flex justify-center">
+
+  <div class="card w-full max-w-2xl hover:shadow-xl hover:bg-white/5 transition-all duration-300  shadow-sm bg-black/10 backdrop-blur-md">
+    <div class="card-body">
+
+      <!-- Title -->
+      <h2 class="card-title text-2xl justify-center mb-4">
+        Contact Me
+      </h2>
+
+      <!-- Email Input -->
+       <form id="contact-form">
+
+        <div class="form-control mb-4">
+          <label class="label">
+            <span class="label-text">Your Email</span>
+          </label>
+          <input type="email" name="user_email" placeholder="example@gmail.com"
+           class="input input-bordered w-full bg-white/5" required>
+        </div>
+
+        <!-- Message -->
+         <div class="form-control mb-4">
+          <label class="label">
+            <span class="label-text">Your Messsage</span>
+            <span class="label-text-alt">Max 500 Charaters</span>
+          </label>
+
+          <textarea name="message" class="textarea textarea-bordered h-34 bg-white/5"
+          placeholder="Write Your Message Here..." maxlength="500" required></textarea>
+         </div>
+         <!-- submit Button -->
+          <div class="card-actions justify-center mt-2">
+            <button type="submit" class="btn btn-ghost border border-white/20">
+              Send Message
+            </button>
+          </div>
+       </form>
+
+    </div>
+  </div>
+
+</div>
+
+<footer class="mt-4 footer bg-black/20 backdrop-blur-md shadow-sm sm:footer-horizontal bg-neutral text-neutral-content p-4">
+  <!-- Left section: logo and copyright -->
+  <div class="flex items-center gap-2">
+    <svg
+      width="36"
+      height="36"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="fill-current">
+      <path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"/>
+    </svg>
+    <p>Copyright © 2026 Abdulla Al Hussain</p>
+  </div>
+
+  <!-- Right section: social links -->
+  <div class="flex gap-4 mt-2 sm:mt-0">
+    <a href="https://www.facebook.com/share/17FXMBYCN6/" target="_blank" class="hover:text-blue-500">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="fill-current">
+        <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24H12.82V14.708h-3.18v-3.62h3.18V8.413c0-3.152 1.923-4.867 4.722-4.867 1.342 0 2.494.1 2.826.144v3.276h-1.941c-1.523 0-1.818.724-1.818 1.788v2.342h3.636l-.474 3.62h-3.162V24h6.197c.73 0 1.326-.597 1.326-1.326V1.326C24 .597 23.403 0 22.675 0z"/>
+      </svg>
+    </a>
+    <a href="https://www.linkedin.com/in/abdulla-al-hussain-845269387" target="_blank" class="hover:text-blue-700">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="fill-current">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75c.966 0 1.75.783 1.75 1.75s-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.5c0-1.072-.928-2-2-2s-2 .928-2 2v4.5h-3v-9h3v1.219c.433-.637 1.225-1.219 2.25-1.219 2.21 0 4 1.79 4 4v5z"/>
+      </svg>
+    </a>
+    <a href="https://github.com/Abdulla-Al-Hussain" target="_blank" class="hover:text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="fill-current">
+        <path d="M12 .296c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.111.82-.258.82-.577v-2.165c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.604-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.49 11.49 0 0 1 3.003-.404c1.018.005 2.043.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.922.43.372.815 1.102.815 2.222v3.293c0 .319.218.694.825.576C20.565 22.092 24 17.592 24 12.296c0-6.627-5.373-12-12-12"/>
+      </svg>
+    </a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+html {
+  scroll-behavior: smooth;
+}
+/* Custom global styles (optional) */
+body {
+  font-family: Roboto,sans-serif;
+  
+  /* Gradient Themes */
+  background: linear-gradient(135deg, #041a4a, #02424d);
+  min-height: 100vh;
+
+}
+/* Top-right animated shadow glow */
+@keyframes glowMove {
+  0% {
+    box-shadow: 10px -10px 30px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 20px -20px 50px rgba(139, 92, 246, 0.6);
+  }
+  100% {
+    box-shadow: 10px -10px 30px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.animate-glow {
+  animation: glowMove 3s ease-in-out infinite;
+}
+
+/* Multi-line typing animation */
+
+.typing {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  animation: reveal 3s ease forwards;
+}
+
+/* Delays */
+.delay-1 {
+  animation-delay: 2.5s;
+}
+
+.delay-2 {
+  animation-delay: 5s;
+}
+
+/* Reveal animation */
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
